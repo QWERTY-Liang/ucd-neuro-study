@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Take part in a neuroscience experiment — UCD Cognitive Neural Systems Lab</title>
+<meta name="description" content="Paid EEG/EMG study at University College Dublin. Earn €40–60 per session. Enter your email and book a time.">
+<style>
+  :root{
+    --navy:#0C447C; --navy-dark:#042C53; --navy-light:#B5D4F4;
+    --ink:#1c2530; --muted:#5a6675; --line:#e3e7ec; --bg:#f5f7fa; --card:#ffffff;
+    --teal-bg:#e1f5ee; --teal-ink:#0f6e56; --red-bg:#fcebeb; --red-ink:#8a2020;
+    --radius:14px; --maxw:760px;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:600;padding:13px 24px;border-radius:10px;cursor:pointer;border:none;transition:.15s}
+  .btn-primary{background:#fff;color:var(--navy)}
+  .btn-primary:hover{background:var(--navy-light)}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-dark)}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px}
+  .logo{width:28px;height:28px;border-radius:7px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center}
+  .nav .btn{padding:8px 16px;font-size:14px}
+
+  .hero{background:var(--navy);color:#fff;padding:48px 0 40px}
+  .tag{display:inline-block;background:var(--navy-light);color:var(--navy);font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;margin-bottom:16px}
+  .hero h1{font-size:32px;line-height:1.2;font-weight:700;max-width:560px;letter-spacing:-.3px}
+  .hero p{font-size:17px;color:var(--navy-light);max-width:520px;margin:14px 0 22px}
+  .facts{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:24px}
+  .fact{display:flex;align-items:center;gap:8px;font-size:15px;color:#fff}
+  .fact svg{color:var(--navy-light)}
+  .money{display:inline-block;background:#FAC775;color:#633806;font-weight:700;font-size:19px;padding:9px 18px;border-radius:10px;margin:6px 0 4px}
+  .info-link{margin-top:14px}
+  .info-link a{color:var(--navy-light);font-size:14px;font-weight:600;border-bottom:1px solid rgba(181,212,244,.55);padding-bottom:1px}
+  .info-link a:hover{color:#fff}
+
+  .reveal{padding:22px 0}
+  details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  summary{list-style:none;cursor:pointer;padding:16px 20px;font-size:16px;font-weight:600;color:var(--navy);display:flex;align-items:center;justify-content:space-between}
+  summary::-webkit-details-marker{display:none}
+  summary .chev{transition:.2s;display:flex}
+  details[open] summary .chev{transform:rotate(180deg)}
+  .reveal-body{padding:4px 20px 20px;border-top:1px solid var(--line)}
+  .reveal-body h3{font-size:15px;font-weight:600;margin:16px 0 6px;color:var(--ink)}
+  .reveal-body p{font-size:15px;color:var(--muted)}
+  .elig{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+  .ecard{border-radius:10px;padding:12px 14px;font-size:13.5px;line-height:1.7}
+  .ecard.ok{background:var(--teal-bg);color:var(--teal-ink)}
+  .ecard.no{background:var(--red-bg);color:var(--red-ink)}
+  .ecard b{display:block;margin-bottom:5px}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:10px}
+  .photo{aspect-ratio:4/3;border-radius:10px;border:1px solid var(--line);background:var(--bg) center/cover no-repeat;display:flex;align-items:flex-end;padding:8px}
+  .photo span{font-size:12px;color:var(--muted);background:rgba(255,255,255,.85);padding:2px 8px;border-radius:6px}
+  .illus{aspect-ratio:4/3;border-radius:10px;border:1px solid var(--line);background:#fff;position:relative;overflow:hidden}
+  .illus svg{position:absolute;inset:0;width:100%;height:100%}
+  .illus span{position:absolute;left:8px;bottom:8px;font-size:12px;color:var(--muted);background:rgba(255,255,255,.85);padding:2px 8px;border-radius:6px}
+
+  .book{padding:10px 0 44px}
+  .book h2{font-size:24px;font-weight:700;letter-spacing:-.2px}
+  .book .sub{color:var(--muted);font-size:16px;margin:6px 0 18px}
+  .embed{background:var(--card);border:1.5px dashed var(--navy-light);border-radius:var(--radius);padding:30px 20px;text-align:center;color:var(--muted)}
+  .embed b{color:var(--navy);font-size:15px}
+  .embed code{background:var(--bg);padding:2px 6px;border-radius:5px;font-size:13px}
+
+  footer{padding:28px 0;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--muted);line-height:1.7}
+  footer a{color:var(--navy);font-weight:500}
+
+  @media(max-width:560px){
+    .hero{padding:38px 0 34px}
+    .hero h1{font-size:26px}
+    .elig{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="logo"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3l2 -5l4 10l2 -5h3"/></svg></span> Cognitive Neural Systems Lab</div>
+    <a class="btn btn-navy" href="#book">Book a time</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="tag">UCD School of Electrical &amp; Electronic Engineering</span>
+    <h1>Want to take part in a neuroscience experiment?</h1>
+    <div class="money">Earn &euro;40&ndash;60 for one session &middot; paid in cash</div>
+    <p>Help us study how the brain makes decisions. One relaxed session at UCD, a simple task on a computer, and you're paid for your time.</p>
+    <div class="facts">
+      <span class="fact"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 9.5a4 4 0 1 0 0 5"/><path d="M7 11h5"/><path d="M7 13.5h4.5"/></svg> &euro;10 / hour</span>
+      <span class="fact"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 3.5–5 hours</span>
+      <span class="fact"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-4-4.5-7-7.8-7-11a7 7 0 0 1 14 0c0 3.2-3 6.5-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> UCD, Room 022</span>
+    </div>
+    <a class="btn btn-primary" href="#book">Enter your email &amp; book &rarr;</a>
+    <p class="info-link"><a href="info_sheet.pdf" target="_blank" rel="noopener">Read the full information sheet (PDF) &rarr;</a></p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <details>
+      <summary>Read more about the study <span class="chev"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span></summary>
+      <div class="reveal-body">
+        <h3>What you'll do</h3>
+        <p>You watch simple shapes on a screen and show your choice by pressing a button, moving your eyes, or making a small hand movement, in short 10-minute rounds with breaks. We put a soft cap on your head to record brain signals (a gel that washes out with water) and stick small sensors on your hands, cheek and forehead. You can do it in one longer visit (about 5 hours) or split it over two shorter days (about 3.5 hours each) — you choose when you book. It takes place in the lab (Room 022, engineering building, UCD).</p>
+        <h3>Who can take part</h3>
+        <div class="elig">
+          <div class="ecard ok"><b>You can take part if</b>You're aged 18&ndash;50, can see well (glasses/contacts are fine), have no brain or mental-health condition that slows fast reactions, and can roll up your sleeves for arm sensors.</div>
+          <div class="ecard no"><b>Please don't if you have</b>Epilepsy, fainting for no clear reason, trouble with flashing lights, a silver allergy, or any implanted electronic device (e.g. a pacemaker).</div>
+        </div>
+        <h3>Your data &amp; what happens on the day</h3>
+        <p>We store your data under a code, not your name, and follow data-protection law (GDPR). Taking part is your choice and you can stop at any time. When you arrive we'll go through and sign the consent form together and do a quick handedness check &mdash; nothing to fill in beforehand. Showers, shampoo and towels are there for you afterwards.</p>
+        <h3>Contact</h3>
+        <p>Liang Tong &middot; <a href="mailto:liang.tong2@ucdconnect.ie">liang.tong2@ucdconnect.ie</a> &mdash; happy to answer any questions before you book.</p>
+        <p style="margin-top:14px"><a href="info_sheet.pdf" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600">Read the full information sheet (PDF) &rarr;</a></p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="reveal" style="padding-top:0">
+  <div class="wrap">
+    <details>
+      <summary>About the lab &amp; our research <span class="chev"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span></summary>
+      <div class="reveal-body">
+        <p>We're the Cognitive Neural Systems Lab at University College Dublin, led by Dr Elaine Corbett. We study how the brain turns what we see into decisions &mdash; and how those decisions are shaped by the movements we make to act on them.</p>
+        <p>To do this, we record the brain's electrical signals (EEG) and small muscle signals (EMG) while people do simple decision tasks. Learning how a healthy brain gathers evidence and commits to a choice can, in time, help build better tools for conditions that affect decision-making and movement. The work is funded by Science Foundation Ireland.</p>
+        <div class="gallery">
+          <div class="illus"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A head wearing an EEG cap with electrodes"><circle cx="100" cy="84" r="44" fill="#EAF2FB" stroke="#0C447C" stroke-width="2.5"/><path d="M58 66 Q100 30 142 66" fill="none" stroke="#0C447C" stroke-width="3" stroke-linecap="round"/><g stroke="#0C447C" stroke-width="1.4" fill="none" stroke-linecap="round" opacity=".55"><path d="M80 60 q-6 -12 -2 -22"/><path d="M100 52 v-18"/><path d="M120 60 q6 -12 2 -22"/></g><g fill="#1D9E75"><circle cx="80" cy="60" r="4.5"/><circle cx="100" cy="52" r="4.5"/><circle cx="120" cy="60" r="4.5"/><circle cx="72" cy="82" r="4.5"/><circle cx="100" cy="76" r="4.5"/><circle cx="128" cy="82" r="4.5"/></g><path d="M76 112 q24 14 48 0" fill="none" stroke="#0C447C" stroke-width="2" stroke-linecap="round"/></svg><span>EEG cap</span></div>
+          <div class="illus"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid meet" role="img" aria-label="EEG brain activity map"><defs><clipPath id="scalp"><circle cx="100" cy="82" r="54"/></clipPath></defs><path d="M100 20 l-9 14 h18 z" fill="#EAF2FB" stroke="#0C447C" stroke-width="2" stroke-linejoin="round"/><circle cx="40" cy="82" r="8" fill="#EAF2FB" stroke="#0C447C" stroke-width="2"/><circle cx="160" cy="82" r="8" fill="#EAF2FB" stroke="#0C447C" stroke-width="2"/><circle cx="100" cy="82" r="54" fill="#EAF2FB" stroke="#0C447C" stroke-width="2.5"/><g clip-path="url(#scalp)"><ellipse cx="86" cy="70" rx="30" ry="24" fill="#EF9F27" opacity=".45"/><ellipse cx="114" cy="96" rx="22" ry="18" fill="#1D9E75" opacity=".45"/><ellipse cx="90" cy="74" rx="13" ry="11" fill="#D85A30" opacity=".5"/></g><g fill="#0C447C"><circle cx="100" cy="50" r="2.6"/><circle cx="78" cy="60" r="2.6"/><circle cx="122" cy="60" r="2.6"/><circle cx="68" cy="82" r="2.6"/><circle cx="100" cy="82" r="2.6"/><circle cx="132" cy="82" r="2.6"/><circle cx="78" cy="104" r="2.6"/><circle cx="122" cy="104" r="2.6"/><circle cx="100" cy="116" r="2.6"/></g></svg><span>Brain activity</span></div>
+          <div class="illus"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid meet" role="img" aria-label="EEG brainwave traces"><g fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M12 36 q11 -11 22 0 t22 0 t22 0 t22 0 t22 0 t22 0 t22 0" stroke="#0C447C"/><path d="M12 66 q11 -16 22 0 t22 0 t22 0 t22 0 t22 0 t22 0 t22 0" stroke="#1D9E75"/><path d="M12 96 q11 -9 22 0 t22 0 t22 0 t22 0 t22 0 t22 0 t22 0" stroke="#0C447C"/><path d="M12 126 q11 -18 22 0 t22 0 t22 0 t22 0 t22 0 t22 0 t22 0" stroke="#EF9F27"/></g></svg><span>Brainwaves</span></div>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <h2>Book your session</h2>
+    <p class="sub">Choose one 5-hour session or two shorter 3.5-hour days, enter your email and pick your time(s). You'll get a calendar invite and a reminder the day before.</p>
+    <iframe title="booth2 EEG/EMG booking form" src="https://form.jotform.com/261622305968057" style="width:100%;min-height:1050px;border:1px solid var(--line);border-radius:var(--radius);background:#fff" allow="geolocation; microphone; camera; fullscreen" loading="lazy"></iframe>
+    <p style="font-size:13px;color:var(--muted);margin-top:10px;text-align:center">Trouble with the form above? <a href="https://form.jotform.com/261622305968057" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600">Open it in a new tab &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>Liang Tong (researcher) &middot; <a href="mailto:liang.tong2@ucdconnect.ie">liang.tong2@ucdconnect.ie</a><br>Asst. Prof. Elaine Corbett (PI) &middot; <a href="mailto:corbette@ucd.ie">corbette@ucd.ie</a></div>
+    <div style="text-align:right">Approved by the UCD Human Research Ethics Committee<br>Funded by Science Foundation Ireland</div>
+  </div>
+</footer>
+
+</body>
+</html>
